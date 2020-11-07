@@ -1,4 +1,9 @@
-<P><%= notice %></P>
-<p>Title:<%= @book.title %></p>
-<p>Body:<%= @book.body%></p>
-<P><%= link_to "Edit",edit_book_path(@book) %>|<%= link_to "Back",books_path %></P>
+<main>
+  <div class="explanation">
+    <P class="message"><%= notice %></P>
+    <p><span class= "bold">Title:</span><%= @book.title %></p>
+    <p><span class= "bold">Body:</span><%= @book.body%></p>
+  </div>
+  
+    <%= link_to "Edit",edit_book_path(@book), class: "btn1" %>|<%= link_to "Back",books_path, class: "btn2" %>
+</main>

@@ -1,5 +1,8 @@
-<P><%= notice %></P>
-<h1>Books</h1>
+
+<P class="message"><%= notice %></P>
+
+<body>
+<h1 class="title">Books</h1>
 <table>
   <tr>
     <th>Title</th>
@@ -16,14 +19,18 @@
      </td>
      <td>
        <%= link_to "Show", book_path(book) %>
+     </td>
+     <td>
        <%= link_to "Edit", edit_book_path(book) %>
+     </td>
+     <td>
        <%= link_to "Destroy", book_path(book), method: :delete, data: {confirm: "Are you sure？"} %>
      </td>
    </tr>
   <% end %>
 </table>
 
-<h1>New book</h1>
+<h2 class="new">New book</h2>
  <%= form_with model: @book, local: true do |f| %>
 
  <% if @book.errors.any? %>
@@ -38,9 +45,9 @@
 <% end %>
 
  <P>Title</P>
- <%= f.text_field :title %>
+ <%= f.text_field :title, class: "text1" %>
  <P>Body</P>
- <%= f.text_area :body %>
- <%= f.submit "Create Book" %>
+ <%= f.text_area :body, class: "text2" %>
+ <%= f.submit "Create Book",class: "btn" %>
 <% end %>
-
+</body>
